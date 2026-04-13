@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Podóloga Lavínia Silva</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Montserrat', sans-serif; }
+    .titulo { font-family: 'Playfair Display', serif; }
+
+    .diagonal {
+      clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: 0.8s;
+    }
+
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body class="bg-[#f5f1e8]">
+
+<!-- HERO -->
+<section class="min-h-screen flex flex-col md:flex-row">
+
+  <div class="md:w-1/2 bg-gradient-to-r from-green-200 to-green-300 p-10 md:p-16 flex flex-col justify-center diagonal">
+
+    <div class="mb-8">
+      <div class="w-24 h-24 border-2 border-green-900 rounded-full flex items-center justify-center">
+        👣
+      </div>
+    </div>
+
+    <h1 class="titulo text-5xl md:text-6xl text-green-900">Podóloga</h1>
+    <h2 class="titulo text-4xl text-green-900 italic mb-10">Lavínia Silva</h2>
+
+    <ul class="text-white text-lg space-y-2">
+      <li>• Unha inflamada</li>
+      <li>• Unha encravada</li>
+      <li>• Calos e calosidades</li>
+      <li>• Rachaduras e fissuras</li>
+      <li>• Órtese corretiva</li>
+    </ul>
+
+    <a href="https://wa.me/553298016614"
+       class="mt-10 bg-green-900 text-white px-6 py-3 rounded-full w-fit hover:scale-105 transition">
+       Agendar pelo WhatsApp
+    </a>
+
+  </div>
+
+  <div class="md:w-1/2 flex flex-col justify-center items-center p-10 text-center">
+
+    <img src="https://via.placeholder.com/300"
+         class="rounded-full w-72 h-72 object-cover shadow-xl mb-10">
+
+    <div class="text-green-900 space-y-4">
+      <p>📞 (32) 9 9801-6614</p>
+      <p>📸 @laviniapodologa</p>
+      <p>📍 Descoberto - MG</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SOBRE -->
+<section class="p-10 md:p-16 text-center fade-up">
+  <h2 class="titulo text-4xl text-green-900 mb-6">Sobre a Profissional</h2>
+  <p class="max-w-2xl mx-auto text-gray-700">
+    Especialista em cuidados com os pés, oferecendo tratamentos modernos e seguros para garantir saúde, conforto e bem-estar. Atendimento humanizado e ambiente totalmente higienizado.
+  </p>
+</section>
+
+<!-- FORMULÁRIO DE DEPOIMENTO -->
+<section class="bg-green-100 p-10 md:p-16 fade-up">
+  <h2 class="titulo text-4xl text-green-900 text-center mb-10">
+    Deixe seu depoimento
+  </h2>
+
+  <div class="max-w-xl mx-auto bg-white p-6 rounded-xl shadow">
+
+    <form>
+      <input type="text" placeholder="Seu nome"
+        class="w-full mb-4 p-3 border rounded-lg outline-none focus:ring-2 focus:ring-green-300">
+
+      <textarea placeholder="Escreva seu depoimento..."
+        class="w-full mb-4 p-3 border rounded-lg outline-none focus:ring-2 focus:ring-green-300"></textarea>
+
+      <button type="submit"
+        class="bg-green-900 text-white px-6 py-3 rounded-full hover:bg-green-800 transition w-full">
+        Enviar depoimento
+      </button>
+    </form>
+
+  </div>
+</section>
+
+<!-- BOTÃO FLUTUANTE -->
+<a href="https://wa.me/553298016614"
+   class="fixed bottom-5 right-5 bg-green-600 text-white p-4 rounded-full shadow-lg text-2xl hover:scale-110 transition">
+   💬
+</a>
+
+<!-- SCRIPT ANIMAÇÃO -->
+<script>
+  const elements = document.querySelectorAll('.fade-up');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('show');
+      }
+    });
+  });
+
+  elements.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
